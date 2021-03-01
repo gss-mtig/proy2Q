@@ -18,6 +18,10 @@ repo_url: "https://github.com/gss-mtig/proy2Q"
 
 nav:
 - Home: index.md
+- Estructura del proyecto: estructura.md
+- Contacto: contact.md
+- Acerca de: about.md
+- Página principal: principal.md
 
 plugins:
     - search
