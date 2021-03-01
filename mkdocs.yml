@@ -1,0 +1,23 @@
+site_name: Proyecto 2do Quatrimestre
+site_url: https://gss-mtig.github.io/proy2Q/
+site_description: Proyecto 2do Quatrimestre
+site_author: proy2Q
+theme:
+  name: 'material'
+  language: 'es'
+  highlightjs: true
+
+markdown_extensions:
+  - codehilite:
+      linenums: True
+  - admonition
+  - pymdownx.magiclink
+  - pymdownx.superfences
+  - footnotes
+repo_url: "https://github.com/gss-mtig/proy2Q"
+
+nav:
+- Home: index.md
+
+plugins:
+    - search
