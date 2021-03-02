@@ -13,14 +13,14 @@
         <meta name="author" content="proy2Q">
       
       
-        <link rel="canonical" href="https://gss-mtig.github.io/proy2Q/estructura/">
+        <link rel="canonical" href="https://gss-mtig.github.io/proy2Q/menu/">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.1">
     
     
       
-        <title>Estructura del proyecto - Proyecto 2do Quatrimestre</title>
+        <title>Menú - Proyecto 2do Quatrimestre</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#estructura-del-proyecto" class="md-skip">
+        <a href="#menu" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Estructura del proyecto
+              Menú
             
           </span>
         </div>
@@ -218,20 +218,11 @@
 
   
   
-    
   
-  
-    <li class="md-nav__item md-nav__item--active">
-      
-      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
-      
-        
-      
-      
-      <a href="./" class="md-nav__link md-nav__link--active">
+    <li class="md-nav__item">
+      <a href="../estructura/" class="md-nav__link">
         Estructura del proyecto
       </a>
-      
     </li>
   
 
@@ -317,11 +308,20 @@
 
   
   
+    
   
-    <li class="md-nav__item">
-      <a href="../menu/" class="md-nav__link">
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+        
+      
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
         Menú
       </a>
+      
     </li>
   
 
@@ -369,33 +369,60 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/gss-mtig/proy2Q/edit/master/docs/estructura.md" title="Editar esta página" class="md-content__button md-icon">
+                  <a href="https://github.com/gss-mtig/proy2Q/edit/master/docs/menu.md" title="Editar esta página" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="estructura-del-proyecto">Estructura del proyecto</h1>
-<p>Crear una carpeta llamada <strong>proy2Q</strong>. Dentro de esa carpeta crear una carpeta llamada <strong>www</strong></p>
-<p>Dentro de la carpeta <strong>www</strong> crear varias subcarpetas llamadas: </p>
-<ul>
-<li><em>css</em>: carpeta donde guardar todos los css</li>
-<li><em>js</em>: carpeta donde guardar todos los ficheros javascript que se vayan generando o que provengan de
-plugins</li>
-<li><em>data</em>: carpeta donde guardar todos los geojson.</li>
-<li><em>iconos</em>: carpeta donde guardar las imágenes que habéis utilizado para simbolizar cada una de las
-capas de geojson</li>
-<li><em>img</em>: carpeta donde guardar el resto de las imágenes</li>
-</ul>
-<p>En la carpeta <em>www</em> crear estos archivos html llamados: </p>
-<ul>
-<li><em>index.html</em></li>
-<li><em>about.html</em></li>
-<li><em>contact.html</em></li>
-<li><em>form.html</em></li>
-<li><em>forum.html</em></li>
-<li><em>list.html</em></li>
-</ul>
-<p>En el campus virtual descargar <strong>Recursos para la apliacación</strong>. Estraer los archivos y moverlos a las carpetas correspondientes.</p>
+                <h1 id="menu">Menú</h1>
+<p>Modificar el archivo <strong>index.html</strong> para crear el menú de la aplicación</p>
+<div class="highlight"><pre><span></span><code><span class="cp">&lt;!DOCTYPE html&gt;</span>
+<span class="p">&lt;</span><span class="nt">html</span> <span class="na">lang</span><span class="o">=</span><span class="s">&quot;es&quot;</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">head</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">charset</span><span class="o">=</span><span class="s">&quot;UTF-8&quot;</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;format-detection&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;telephone=no&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;msapplication-tap-highlight&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;no&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">meta</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;viewport&quot;</span> <span class="na">content</span><span class="o">=</span><span class="s">&quot;user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width&quot;</span> <span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">title</span><span class="p">&gt;</span>Guia Sant Boi<span class="p">&lt;/</span><span class="nt">title</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/jquery.mobile-1.4.5.min.css&quot;</span><span class="p">/&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/jquery-2.2.4.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/jquery.mobile-1.4.5.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">head</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">body</span><span class="p">&gt;</span>
+    <span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&quot;page&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;mapPage&quot;</span> <span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&quot;header&quot;</span> <span class="na">data-position</span><span class="o">=</span><span class="s">&quot;fixed&quot;</span> <span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;#index_panel&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui-btn ui-btn-left ui-icon-bars ui-btn-corner-all ui-btn-icon-notext&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">h1</span><span class="p">&gt;</span>Guia Urbana de Sant Boi<span class="p">&lt;/</span><span class="nt">h1</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui-btn-right&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;javascript:location.href=&#39;index.html&#39;&quot;</span> <span class="na">data-transition</span><span class="o">=</span><span class="s">&quot;slideup&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui-btn ui-icon-refresh ui-btn-corner-all ui-btn-icon-notext&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;javascript:location.href=&#39;form.html&#39;&quot;</span> <span class="na">data-transition</span><span class="o">=</span><span class="s">&quot;slideup&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui-btn ui-icon-plus ui-btn-corner-all ui-btn-icon-notext&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">a</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&quot;footer&quot;</span> <span class="na">data-position</span><span class="o">=</span><span class="s">&quot;fixed&quot;</span><span class="p">&gt;</span>
+            <span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&quot;navbar&quot;</span><span class="p">&gt;</span>
+                <span class="p">&lt;</span><span class="nt">ul</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;index.html&quot;</span> <span class="na">data-transition</span><span class="o">=</span><span class="s">&quot;none&quot;</span> <span class="na">data-icon</span><span class="o">=</span><span class="s">&quot;location&quot;</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;ui-state-persist ui-btn-active&quot;</span><span class="p">&gt;</span>Mapa<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                    <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;javascript:location.href=&#39;list.html&#39;&quot;</span> <span class="na">data-transition</span><span class="o">=</span><span class="s">&quot;none&quot;</span> <span class="na">data-icon</span><span class="o">=</span><span class="s">&quot;grid&quot;</span><span class="p">&gt;</span>Lista<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+                <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+            <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+
+<span class="hll">        <span class="p">&lt;</span><span class="nt">div</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&quot;panel&quot;</span> <span class="na">data-display</span><span class="o">=</span><span class="s">&quot;overlay&quot;</span> <span class="na">id</span><span class="o">=</span><span class="s">&quot;index_panel&quot;</span> <span class="na">data-theme</span><span class="o">=</span><span class="s">&quot;a&quot;</span><span class="p">&gt;</span>
+</span><span class="hll">            <span class="p">&lt;</span><span class="nt">h2</span><span class="p">&gt;</span>Menú<span class="p">&lt;/</span><span class="nt">h2</span><span class="p">&gt;</span>
+</span><span class="hll">            <span class="p">&lt;</span><span class="nt">ul</span> <span class="na">data-role</span><span class="o">=</span><span class="s">&quot;listview&quot;</span><span class="p">&gt;</span>
+</span><span class="hll">                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;about.html&quot;</span> <span class="na">data-rel</span><span class="o">=</span><span class="s">&quot;close&quot;</span> <span class="na">data-transition</span><span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">&gt;</span>Sobre l&#39;aplicació<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span class="hll">                <span class="p">&lt;</span><span class="nt">li</span><span class="p">&gt;&lt;</span><span class="nt">a</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;contact.html&quot;</span> <span class="na">data-rel</span><span class="o">=</span><span class="s">&quot;close&quot;</span> <span class="na">data-transition</span><span class="o">=</span><span class="s">&quot;none&quot;</span><span class="p">&gt;</span>Contacte<span class="p">&lt;/</span><span class="nt">a</span><span class="p">&gt;&lt;/</span><span class="nt">li</span><span class="p">&gt;</span>
+</span><span class="hll">            <span class="p">&lt;/</span><span class="nt">ul</span><span class="p">&gt;</span>
+</span><span class="hll">        <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+</span>
+    <span class="p">&lt;/</span><span class="nt">div</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">body</span><span class="p">&gt;</span>
+<span class="p">&lt;/</span><span class="nt">html</span><span class="p">&gt;</span>
+</code></pre></div>
+<p>Hacer lo mismo en el archivo <strong>list.html</strong> para crear el menú de la aplicación</p>
                 
               
               
@@ -413,7 +440,7 @@ capas de geojson</li>
   
     <nav class="md-footer__inner md-grid" aria-label="Pie">
       
-        <a href=".." class="md-footer__link md-footer__link--prev" rel="prev">
+        <a href="../formulario/" class="md-footer__link md-footer__link--prev" rel="prev">
           <div class="md-footer__button md-icon">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
           </div>
@@ -422,19 +449,19 @@ capas de geojson</li>
               <span class="md-footer__direction">
                 Anterior
               </span>
-              Home
+              Formulario
             </div>
           </div>
         </a>
       
       
-        <a href="../contact/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../mapa/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Siguiente
               </span>
-              Contacto
+              Mapa
             </div>
           </div>
           <div class="md-footer__button md-icon">
