@@ -23,6 +23,9 @@ nav:
 - Acerca de: about.md
 - Página principal: principal.md
 - Lista de incidencias: lista.md
+- Formulario: formulario.md
+- Menú: menu.md
+- Mapa: mapa.md
 
 plugins:
     - search

@@ -6,7 +6,7 @@ Copiar lo siguiente
 
 ``` html
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="format-detection" content="telephone=no" />
@@ -22,9 +22,9 @@ Copiar lo siguiente
 
 Agregar la librerias externas jQuery y jQuery Mobile junto con sus css
 
-``` html hl_lines="9 10 11 12 13"
+``` html hl_lines="9 10 11 12"
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="format-detection" content="telephone=no" />
@@ -32,7 +32,6 @@ Agregar la librerias externas jQuery y jQuery Mobile junto con sus css
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <title>L'aplicació</title>
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"/>
 
     <script src="js/jquery-2.2.4.min.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
@@ -45,9 +44,9 @@ Agregar la librerias externas jQuery y jQuery Mobile junto con sus css
 
 Agregar el contenedor principal de la página
 
-``` html hl_lines="16 17 18"
+``` html hl_lines="15 16 17"
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="format-detection" content="telephone=no" />
@@ -55,7 +54,6 @@ Agregar el contenedor principal de la página
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <title>L'aplicació</title>
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"/>
 
     <script src="js/jquery-2.2.4.min.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
@@ -70,9 +68,9 @@ Agregar el contenedor principal de la página
 
 Agregar la cabecera de la página
 
-``` html hl_lines="17 18 19 20 21 22 23"
+``` html hl_lines="16 17 18 19 20 21 22"
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="format-detection" content="telephone=no" />
@@ -80,7 +78,6 @@ Agregar la cabecera de la página
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <title>L'aplicació</title>
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"/>
 
     <script src="js/jquery-2.2.4.min.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
@@ -101,9 +98,9 @@ Agregar la cabecera de la página
 
 Agregar el cuerpo principal de la página
 
-``` html hl_lines="24 25 26"
+``` html hl_lines="23 24 25"
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="format-detection" content="telephone=no" />
@@ -111,7 +108,6 @@ Agregar el cuerpo principal de la página
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <title>L'aplicació</title>
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"/>
 
     <script src="js/jquery-2.2.4.min.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
@@ -136,9 +132,9 @@ Agregar el cuerpo principal de la página
 
 Agregar el footer de la página
 
-``` html hl_lines="27 28 29 30 31 32"
+``` html hl_lines="26 27 28 29 30 31"
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="format-detection" content="telephone=no" />
@@ -146,7 +142,6 @@ Agregar el footer de la página
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <title>L'aplicació</title>
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"/>
 
     <script src="js/jquery-2.2.4.min.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
@@ -177,9 +172,9 @@ Agregar el footer de la página
 
 Agregar la información de la aplicación
 
-``` html hl_lines="25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48 49"
+``` html hl_lines="24 25 26 27 28 29 30 31 32 33 34 35 36 37 38 39 40 41 42 43 44 45 46 47 48"
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta name="format-detection" content="telephone=no" />
@@ -187,7 +182,6 @@ Agregar la información de la aplicación
     <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width" />
     <title>L'aplicació</title>
     <link rel="stylesheet" href="css/jquery.mobile-1.4.5.min.css"/>
-	<link rel="stylesheet" href="https://unpkg.com/leaflet@1.3.1/dist/leaflet.css"/>
 
     <script src="js/jquery-2.2.4.min.js"></script>
 	<script src="js/jquery.mobile-1.4.5.min.js"></script>
