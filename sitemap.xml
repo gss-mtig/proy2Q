@@ -1,39 +1,47 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"><url>
      <loc>https://gss-mtig.github.io/proy2Q/</loc>
-     <lastmod>2021-03-02</lastmod>
+     <lastmod>2021-03-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gss-mtig.github.io/proy2Q/estructura/</loc>
-     <lastmod>2021-03-02</lastmod>
+     <lastmod>2021-03-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gss-mtig.github.io/proy2Q/contact/</loc>
-     <lastmod>2021-03-02</lastmod>
+     <lastmod>2021-03-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gss-mtig.github.io/proy2Q/about/</loc>
-     <lastmod>2021-03-02</lastmod>
+     <lastmod>2021-03-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gss-mtig.github.io/proy2Q/principal/</loc>
-     <lastmod>2021-03-02</lastmod>
+     <lastmod>2021-03-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gss-mtig.github.io/proy2Q/lista/</loc>
-     <lastmod>2021-03-02</lastmod>
+     <lastmod>2021-03-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gss-mtig.github.io/proy2Q/formulario/</loc>
-     <lastmod>2021-03-02</lastmod>
+     <lastmod>2021-03-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gss-mtig.github.io/proy2Q/menu/</loc>
-     <lastmod>2021-03-02</lastmod>
+     <lastmod>2021-03-05</lastmod>
      <changefreq>daily</changefreq>
     </url><url>
      <loc>https://gss-mtig.github.io/proy2Q/mapa/</loc>
-     <lastmod>2021-03-02</lastmod>
+     <lastmod>2021-03-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://gss-mtig.github.io/proy2Q/todo/</loc>
+     <lastmod>2021-03-05</lastmod>
+     <changefreq>daily</changefreq>
+    </url><url>
+     <loc>https://gss-mtig.github.io/proy2Q/todoLista/</loc>
+     <lastmod>2021-03-05</lastmod>
      <changefreq>daily</changefreq>
     </url>
 </urlset>
