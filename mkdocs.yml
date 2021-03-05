@@ -26,6 +26,8 @@ nav:
 - Formulario: formulario.md
 - Menú: menu.md
 - Mapa: mapa.md
+- TODO Mapa: todo.md
+- TODO Lista: todoLista.md
 
 plugins:
     - search
