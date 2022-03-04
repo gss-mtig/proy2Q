@@ -13,14 +13,14 @@
         <meta name="author" content="proy2Q">
       
       
-        <link rel="canonical" href="https://gss-mtig.github.io/proy2Q/todo/">
+        <link rel="canonical" href="https://gss-mtig.github.io/proy2Q/mapa_capas/">
       
       <link rel="shortcut icon" href="../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-7.0.1">
     
     
       
-        <title>TODO Mapa - Proyecto 2do Quatrimestre</title>
+        <title>Controles y capas mapa - Proyecto 2do Quatrimestre</title>
       
     
     
@@ -64,7 +64,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#todo-mapa" class="md-skip">
+        <a href="#controles-y-capas-mapa" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -96,7 +96,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              TODO Mapa
+              Controles y capas mapa
             
           </span>
         </div>
@@ -207,6 +207,51 @@
     <li class="md-nav__item">
       <a href=".." class="md-nav__link">
         Home
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requerimientos/" class="md-nav__link">
+        Levantamiento de requerimientos
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../requerimientos_app/" class="md-nav__link">
+        Requerimientos App
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../casos_uso/" class="md-nav__link">
+        Casos de uso
       </a>
     </li>
   
@@ -349,7 +394,7 @@
       
       
       <a href="./" class="md-nav__link md-nav__link--active">
-        TODO Mapa
+        Controles y capas mapa
       </a>
       
     </li>
@@ -364,8 +409,8 @@
   
   
     <li class="md-nav__item">
-      <a href="../todoLista/" class="md-nav__link">
-        TODO Lista
+      <a href="../lista_incidencias/" class="md-nav__link">
+        Lista Incidencias
       </a>
     </li>
   
@@ -379,8 +424,23 @@
   
   
     <li class="md-nav__item">
-      <a href="../hosting.md" class="md-nav__link">
+      <a href="../servidor/" class="md-nav__link">
         Servidor
+      </a>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../mapa_incidencias/" class="md-nav__link">
+        Mapa incidencias
       </a>
     </li>
   
@@ -414,12 +474,12 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/gss-mtig/proy2Q/edit/master/docs/todo.md" title="Editar esta página" class="md-content__button md-icon">
+                  <a href="https://github.com/gss-mtig/proy2Q/edit/master/docs/mapa_capas.md" title="Editar esta página" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="todo-mapa">TODO Mapa</h1>
+                <h1 id="controles-y-capas-mapa">Controles y capas mapa</h1>
 <p>Agregar el document ready</p>
 <div class="highlight"><pre><span></span><code><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
 
@@ -432,7 +492,27 @@
 
  <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/styledLayerControl.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
+<p>Servicios WMTS ICGC <a href="https://www.icgc.cat/es/Administracion-y-empresa/Servicios/Servicios-en-linea-Geoservicios/WMS-y-teselas-Cartografia-de-referencia/WMS-WMTS-rapidos-de-cartografia-raster/WMTS-de-cartografia-raster-en-coordenadas-no-UTM">https://www.icgc.cat/es/Administracion-y-empresa/Servicios/Servicios-en-linea-Geoservicios/WMS-y-teselas-Cartografia-de-referencia/WMS-WMTS-rapidos-de-cartografia-raster/WMTS-de-cartografia-raster-en-coordenadas-no-UTM</a></p>
+<p><a href="http://kartena.github.io/Proj4Leaflet/">http://kartena.github.io/Proj4Leaflet/</a></p>
 <div class="highlight"><pre><span></span><code><span class="c1">//Capas</span>
+
+<span class="kd">const</span> <span class="nx">serveiOrtoCache</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s2">&quot;https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/{z}/{x}/{y}.jpeg&quot;</span><span class="p">,</span> <span class="p">{});</span>
+
+<span class="kd">const</span> <span class="nx">serveiTopoCache</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s2">&quot;https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/topo/GRID3857/{z}/{x}/{y}.jpeg&quot;</span><span class="p">,</span> <span class="p">{});</span>
+
+<span class="kd">const</span> <span class="nx">portals</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">L</span><span class="p">.</span><span class="nx">Proj</span><span class="p">.</span><span class="nx">geoJson</span><span class="p">(</span><span class="nx">portals_json</span><span class="p">,</span> <span class="p">{</span>
+    <span class="nx">pointToLayer</span><span class="o">:</span> <span class="kd">function</span><span class="p">(</span><span class="nx">geoJsonPoint</span><span class="p">,</span> <span class="nx">latlng</span><span class="p">)</span> <span class="p">{</span>
+        <span class="k">return</span> <span class="nx">L</span><span class="p">.</span><span class="nx">circleMarker</span><span class="p">(</span><span class="nx">latlng</span><span class="p">,</span> <span class="p">{</span>
+        <span class="nx">radius</span><span class="o">:</span> <span class="mf">8</span><span class="p">,</span>
+        <span class="nx">fillColor</span><span class="o">:</span> <span class="s2">&quot;#ff7800&quot;</span><span class="p">,</span>
+        <span class="nx">color</span><span class="o">:</span> <span class="s2">&quot;#000&quot;</span><span class="p">,</span>
+        <span class="nx">weight</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="nx">opacity</span><span class="o">:</span> <span class="mf">1</span><span class="p">,</span>
+        <span class="nx">fillOpacity</span><span class="o">:</span> <span class="mf">0.8</span>
+    <span class="p">});</span>
+    <span class="p">}</span>
+<span class="p">});</span>
+
 <span class="kd">const</span> <span class="nx">baseMaps</span> <span class="o">=</span> <span class="p">[</span>
     <span class="p">{</span>
         <span class="nx">groupName</span><span class="o">:</span> <span class="s2">&quot;Mapes base&quot;</span><span class="p">,</span>
@@ -462,6 +542,23 @@
 <span class="kd">const</span> <span class="nx">controlLayers</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">L</span><span class="p">.</span><span class="nx">Control</span><span class="p">.</span><span class="nx">styledLayerControl</span><span class="p">(</span><span class="nx">baseMaps</span><span class="p">,</span> <span class="nx">serveis</span><span class="p">,</span> <span class="nx">options</span><span class="p">);</span>
 <span class="nx">mapa</span><span class="p">.</span><span class="nx">addControl</span><span class="p">(</span><span class="nx">controlLayers</span><span class="p">);</span>
 </code></pre></div>
+<p>Agregar el control de busqueda</p>
+<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/leaflet-search.min.css&quot;</span><span class="p">/&gt;</span>
+    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/leaflet-search.mobile.min.css&quot;</span><span class="p">/&gt;</span>
+
+    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/leaflet-search.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+</code></pre></div>
+<div class="highlight"><pre><span></span><code><span class="kd">const</span> <span class="nx">searchControl</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">L</span><span class="p">.</span><span class="nx">Control</span><span class="p">.</span><span class="nx">Search</span><span class="p">({</span>
+    <span class="nx">layer</span><span class="o">:</span> <span class="nx">portals</span><span class="p">,</span>
+    <span class="nx">propertyName</span><span class="o">:</span> <span class="s1">&#39;Direccion&#39;</span><span class="p">,</span>
+    <span class="nx">zoom</span><span class="o">:</span> <span class="mf">18</span>
+  <span class="p">});</span>
+  <span class="nx">searchControl</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;search:locationfound&#39;</span><span class="p">,</span> <span class="p">(</span><span class="nx">item</span><span class="p">)</span> <span class="p">=&gt;</span> <span class="p">{</span>
+    <span class="kd">const</span> <span class="p">{</span><span class="nx">latlng</span><span class="p">}</span> <span class="o">=</span> <span class="nx">item</span><span class="p">;</span>
+    <span class="c1">//streetView(latlng.lat, latlng.lng);</span>
+  <span class="p">})</span>
+  <span class="nx">mapa</span><span class="p">.</span><span class="nx">addControl</span><span class="p">(</span> <span class="nx">searchControl</span> <span class="p">);</span>
+</code></pre></div>
 <p>Agregar el font-awesome</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&quot;</span><span class="p">/&gt;</span>
 </code></pre></div>
@@ -483,7 +580,7 @@
     <span class="nx">position</span><span class="o">:</span> <span class="s1">&#39;topleft&#39;</span>
 <span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">mapa</span><span class="p">);</span>
 </code></pre></div>
-<p>Agregar la vista de calle</p>
+<p>Agregar la vista de calle (<strong>REQUIERE API KEY DE GOOGLE</strong>)</p>
 <div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://maps.googleapis.com/maps/api/js?key=[TU_API_KEY]&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">panorama</span> <span class="p">{</span>
@@ -659,13 +756,13 @@
         </a>
       
       
-        <a href="../todoLista/" class="md-footer__link md-footer__link--next" rel="next">
+        <a href="../lista_incidencias/" class="md-footer__link md-footer__link--next" rel="next">
           <div class="md-footer__title">
             <div class="md-ellipsis">
               <span class="md-footer__direction">
                 Siguiente
               </span>
-              TODO Lista
+              Lista Incidencias
             </div>
           </div>
           <div class="md-footer__button md-icon">
