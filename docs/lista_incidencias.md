@@ -1,4 +1,4 @@
-# TODO Lista
+# Lista incidencias
 
 Agregar el contenedor principal
 
@@ -25,6 +25,8 @@ Agregar la tabla al contenedor
 </table>
 ```
 
+Crear el archivo **list.js** en la carpeta *js*.
+
 ``` js
 $(document).ready(function() {
 
@@ -38,7 +40,7 @@ $(document).ready(function() {
             success: function (data) {
                 for (i=0; i<data.length; i++){
                     var item = `<tr>
-                    <td><img width="200px" src="http://158.109.128.158/projecte/images/${data[i].foto}"/></td>
+                    <td><img width="200px" src="${serverURL}/images/${data[i].foto}"/></td>
                     <td>${data[i].nombre}</td>
                     <td>${data[i].descripcio}</td>
                     </tr>`
@@ -53,4 +55,10 @@ $(document).ready(function() {
     getIncidencias();
 
 });
+```
+
+Agregar el archivo list.js al archivo list.html
+
+``` html
+ <script src="js/list.js"></script>
 ```

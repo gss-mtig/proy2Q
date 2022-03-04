@@ -1,4 +1,4 @@
-# TODO Mapa
+# Controles y capas mapa
 
 Agregar el document ready
 
@@ -18,8 +18,31 @@ Agregar el control de capas
  <script src="js/styledLayerControl.js"></script>
 ```
 
+Servicios WMTS ICGC https://www.icgc.cat/es/Administracion-y-empresa/Servicios/Servicios-en-linea-Geoservicios/WMS-y-teselas-Cartografia-de-referencia/WMS-WMTS-rapidos-de-cartografia-raster/WMTS-de-cartografia-raster-en-coordenadas-no-UTM
+
+
+http://kartena.github.io/Proj4Leaflet/
+
 ``` js
 //Capas
+
+const serveiOrtoCache = new L.tileLayer("https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/{z}/{x}/{y}.jpeg", {});
+
+const serveiTopoCache = new L.tileLayer("https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/topo/GRID3857/{z}/{x}/{y}.jpeg", {});
+
+const portals = new L.Proj.geoJson(portals_json, {
+    pointToLayer: function(geoJsonPoint, latlng) {
+        return L.circleMarker(latlng, {
+        radius: 8,
+        fillColor: "#ff7800",
+        color: "#000",
+        weight: 1,
+        opacity: 1,
+        fillOpacity: 0.8
+    });
+    }
+});
+
 const baseMaps = [
     {
         groupName: "Mapes base",
@@ -48,6 +71,28 @@ const options = {
 };
 const controlLayers = new L.Control.styledLayerControl(baseMaps, serveis, options);
 mapa.addControl(controlLayers);
+```
+
+Agregar el control de busqueda
+
+``` html
+    <link rel="stylesheet" href="css/leaflet-search.min.css"/>
+    <link rel="stylesheet" href="css/leaflet-search.mobile.min.css"/>
+
+    <script src="js/leaflet-search.min.js"></script>
+```
+
+``` js
+const searchControl = new L.Control.Search({
+    layer: portals,
+    propertyName: 'Direccion',
+    zoom: 18
+  });
+  searchControl.on('search:locationfound', (item) => {
+    const {latlng} = item;
+    //streetView(latlng.lat, latlng.lng);
+  })
+  mapa.addControl( searchControl );
 ```
 
 Agregar el font-awesome
@@ -84,7 +129,7 @@ L.control.ruler({
 }).addTo(mapa);
 ``` 
 
-Agregar la vista de calle
+Agregar la vista de calle (**REQUIERE API KEY DE GOOGLE**)
 
 ```html
 <script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?key=[TU_API_KEY]"></script>
