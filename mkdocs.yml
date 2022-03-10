@@ -33,6 +33,7 @@ nav:
 - Lista Incidencias: lista_incidencias.md
 - Servidor: servidor.md
 - Mapa incidencias: mapa_incidencias.md
+- Formulario incidencias: form_incidencias.md
 
 plugins:
     - search
