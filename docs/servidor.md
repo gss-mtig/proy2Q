@@ -2,7 +2,7 @@
 
 ## Hosting 
 
-Crear la cuenta de hosting gratis en https://www.hostinger.es/hosting-gratuito
+Crear la cuenta de hosting gratis en https://www.hostinger.es/hosting-gratuito o en su defecto https://www.awardspace.com/free-hosting/
 
 Verificar el correo
 
@@ -109,7 +109,8 @@ $mysqli->close();
 Crear un archivo llamado **upload.php** con el siguiente contenido
 
 ``` php
-<?php 
+<?php
+ header("Access-Control-Allow-Origin: *");
  // Directory where uploaded images are saved
  $dirname = "images/"; 
  // If uploading file
@@ -135,6 +136,36 @@ Crear un archivo llamado **index.php** con el siguiente contenido
  </body>
 </html>
 ```
+
+!!! note "Opcional"
+    Crear un archivo llamado **photo.php** con el siguiente contenido
+
+    ``` php
+      <?php
+      header("Access-Control-Allow-Origin: *");
+      $x = $_GET['foto'];
+      $file_out = "images/".$x; // The image to return
+
+      if (file_exists($file_out)) {
+
+        $image_info = getimagesize($file_out);
+
+        //Set the content-type header as appropriate
+        header('Content-Type: ' . $image_info['mime']);
+
+        //Set the content-length header
+        header('Content-Length: ' . filesize($file_out));
+
+        //Write the image bytes to the client
+        readfile($file_out);
+      }
+      else { // Image file not found
+
+          header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
+
+      }
+      ?>
+    ```
 
 Subir los archivos php a la carpeta **public_html**
 
