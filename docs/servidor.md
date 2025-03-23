@@ -141,7 +141,7 @@ Crear un archivo llamado **index.php** con el siguiente contenido
     Crear un archivo llamado **photo.php** con el siguiente contenido
 
     ``` php
-      <?php
+    <?php
       header("Access-Control-Allow-Origin: *");
       $x = $_GET['foto'];
       $file_out = "images/".$x; // The image to return
@@ -164,7 +164,7 @@ Crear un archivo llamado **index.php** con el siguiente contenido
           header($_SERVER["SERVER_PROTOCOL"] . " 404 Not Found");
 
       }
-      ?>
+    ?>
     ```
 
 Subir los archivos php a la carpeta **public_html**
