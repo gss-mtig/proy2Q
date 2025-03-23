@@ -48,6 +48,7 @@ E instalar con el comando:
 
 ```bash
 pip install mkdocs-material
+pip install mkdocs-macros-plugin
 ```
 
 ### Comandos mkdocs
