@@ -12,13 +12,11 @@
         <meta name="author" content="proy2Q">
       
       
-        <link rel="canonical" href="https://gss-mtig.github.io/proy2Q/form_incidencias/">
+        <link rel="canonical" href="https://gss-mtig.github.io/proy2Q/ajustes_varios/">
       
       
-        <link rel="prev" href="../mapa_incidencias/">
+        <link rel="prev" href="../form_incidencias/">
       
-      
-        <link rel="next" href="../ajustes_varios/">
       
       
       <link rel="icon" href="../assets/images/favicon.png">
@@ -26,7 +24,7 @@
     
     
       
-        <title>Formulario incidencias - Proyecto 2do Quatrimestre</title>
+        <title>Ajustes - Proyecto 2do Quatrimestre</title>
       
     
     
@@ -68,7 +66,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#formulario-incidencias" class="md-skip">
+        <a href="#ajustes-varios" class="md-skip">
           Saltar a contenido
         </a>
       
@@ -104,7 +102,7 @@
         <div class="md-header__topic" data-md-component="header-topic">
           <span class="md-ellipsis">
             
-              Formulario incidencias
+              Ajustes
             
           </span>
         </div>
@@ -554,6 +552,27 @@
       
   
   
+  
+  
+    <li class="md-nav__item">
+      <a href="../form_incidencias/" class="md-nav__link">
+        
+  
+  <span class="md-ellipsis">
+    Formulario incidencias
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
     
   
   
@@ -566,29 +585,19 @@
         
       
       
-      <a href="./" class="md-nav__link md-nav__link--active">
-        
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
   
   <span class="md-ellipsis">
-    Formulario incidencias
+    Ajustes
     
   </span>
   
 
-      </a>
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
-    </li>
-  
-
-    
-      
-      
-  
-  
-  
-  
-    <li class="md-nav__item">
-      <a href="../ajustes_varios/" class="md-nav__link">
+      <a href="./" class="md-nav__link md-nav__link--active">
         
   
   <span class="md-ellipsis">
@@ -598,6 +607,44 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Tabla de contenidos">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lista-incidencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lista incidencias
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formulario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formulario
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
     </li>
   
 
@@ -622,6 +669,32 @@
     
   
   
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Tabla de contenidos
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#lista-incidencias" class="md-nav__link">
+    <span class="md-ellipsis">
+      Lista incidencias
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#formulario" class="md-nav__link">
+    <span class="md-ellipsis">
+      Formulario
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
 </nav>
                   </div>
                 </div>
@@ -639,106 +712,77 @@
   
 
 
-<h1 id="formulario-incidencias">Formulario incidencias</h1>
-<p>Crear el archivo <strong>form.js</strong> en la carpeta <em>js</em>.</p>
-<p>Agregar el archivo form.js al archivo form.html</p>
-<div class="highlight"><pre><span></span><code> <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/form.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<h1 id="ajustes-varios">Ajustes varios</h1>
+<h2 id="lista-incidencias">Lista incidencias</h2>
+<p>Cambiar la URL para cargar la foto y agregar una imagen de respaldo (fallback)</p>
+<div class="highlight"><pre><span></span><code><span class="o">&lt;</span><span class="nx">img</span><span class="w"> </span><span class="nx">width</span><span class="o">=</span><span class="s2">&quot;200px&quot;</span><span class="w"> </span><span class="nx">src</span><span class="o">=</span><span class="s2">&quot;${serverURL}/photo.php?foto=${data[i].foto}&quot;</span><span class="w"> </span>
+<span class="nx">onerror</span><span class="o">=</span><span class="s2">&quot;this.onerror=null; this.src=&#39;./img/no-image.jpeg&#39;;&quot;</span>
+<span class="err">/&gt;</span>
 </code></pre></div>
-<p>Copiar lo siguiente en el archivo <strong>form.js</strong></p>
-<div class="highlight"><pre><span></span><code><span class="kd">let</span><span class="w"> </span><span class="nx">foto</span><span class="p">;</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">serverURL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;https://web-uab.000webhostapp.com/&quot;</span><span class="p">;</span>
-
-<span class="kd">function</span><span class="w"> </span><span class="nx">saveMarker</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#nom&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span><span class="w"> </span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#descrip&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span><span class="w"> </span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">lat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#text-latitud&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span><span class="w"> </span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="nx">lng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#text-longitud&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
-
-<span class="w">    </span><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
-<span class="w">        </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">serverURL</span><span class="si">}</span><span class="sb">incidencia.php`</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="nx">lng</span><span class="p">,</span><span class="w"> </span>
-<span class="w">            </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="nx">lat</span><span class="p">,</span>
-<span class="w">            </span><span class="nx">descripcio</span><span class="o">:</span><span class="w"> </span><span class="nx">desc</span><span class="p">,</span>
-<span class="w">            </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span>
-<span class="w">            </span><span class="nx">foto</span><span class="o">:</span><span class="w"> </span><span class="nx">foto</span>
-<span class="w">        </span><span class="p">},</span>
-<span class="w">        </span><span class="nx">success</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(){</span>
-<span class="w">            </span><span class="c1">//subirFichero();</span>
-<span class="w">            </span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;list.html&quot;</span><span class="p">;</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">});</span>
-
-<span class="p">}</span>
-
-<span class="kd">function</span><span class="w"> </span><span class="nx">getCurrentPosition</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">//TODO tomar la posicion del GPS</span>
-<span class="p">}</span>
-
-<span class="kd">function</span><span class="w"> </span><span class="nx">getCameraPicture</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">//TOOD tomar foto camara</span>
+<h2 id="formulario">Formulario</h2>
+<p>Generer un nombre para el archivo de imagen</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">generarNombreArchivo</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">nombreAleatorio</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">Date</span><span class="p">.</span><span class="nx">now</span><span class="p">()</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;-&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nb">Math</span><span class="p">.</span><span class="nx">floor</span><span class="p">(</span><span class="nb">Math</span><span class="p">.</span><span class="nx">random</span><span class="p">()</span><span class="w"> </span><span class="o">*</span><span class="w"> </span><span class="mf">10000</span><span class="p">);</span><span class="w"> </span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">nombreAleatorio</span><span class="si">}</span><span class="sb">`</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
-<p>Simular subir foto</p>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">loadFoto</span><span class="p">(</span><span class="nx">evt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">image</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#fimg&#39;</span><span class="p">);</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">imageData</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">URL</span><span class="p">.</span><span class="nx">createObjectURL</span><span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
-<span class="w">  </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="nx">evt</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
-<span class="w">  </span><span class="nx">image</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;src&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">imageData</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">image</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s2">&quot;mime&quot;</span><span class="p">,</span><span class="w"> </span><span class="nx">evt</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">type</span><span class="p">);</span>
-<span class="w">  </span><span class="nx">foto</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">evt</span><span class="p">.</span><span class="nx">target</span><span class="p">.</span><span class="nx">files</span><span class="p">[</span><span class="mf">0</span><span class="p">].</span><span class="nx">name</span><span class="p">;</span>
-<span class="w">  </span><span class="nx">image</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;load&#39;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">URL</span><span class="p">.</span><span class="nx">revokeObjectURL</span><span class="p">(</span><span class="nx">image</span><span class="p">.</span><span class="nx">attr</span><span class="p">(</span><span class="s1">&#39;src&#39;</span><span class="p">))</span><span class="w"> </span><span class="c1">// free memory</span>
+<p>Obtener imagen en base64 y obtener el tipo de imagen</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">getBase64Image</span><span class="p">(</span><span class="nx">img_capt</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">canvas</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="s2">&quot;canvas&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">canvas</span><span class="p">.</span><span class="nx">width</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">img_capt</span><span class="p">.</span><span class="nx">naturalWidth</span><span class="p">;</span>
+<span class="w">  </span><span class="nx">canvas</span><span class="p">.</span><span class="nx">height</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">img_capt</span><span class="p">.</span><span class="nx">naturalHeight</span><span class="p">;</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">ctx</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">canvas</span><span class="p">.</span><span class="nx">getContext</span><span class="p">(</span><span class="s2">&quot;2d&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">ctx</span><span class="p">.</span><span class="nx">drawImage</span><span class="p">(</span><span class="nx">img_capt</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">,</span><span class="w"> </span><span class="mf">0</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">dataURL</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">canvas</span><span class="p">.</span><span class="nx">toDataURL</span><span class="p">(</span><span class="s2">&quot;image/png&quot;</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">dataURL</span><span class="p">;</span>
+<span class="p">}</span>
+
+<span class="kd">function</span><span class="w"> </span><span class="nx">obtenerExtensionBase64</span><span class="p">(</span><span class="nx">base64</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">match</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">base64</span><span class="p">.</span><span class="nx">match</span><span class="p">(</span><span class="sr">/^data:image\/(png|jpeg|jpg|gif|webp|bmp);base64,/</span><span class="p">);</span>
+<span class="w">  </span><span class="k">return</span><span class="w"> </span><span class="nx">match</span><span class="w"> </span><span class="o">?</span><span class="w"> </span><span class="nx">match</span><span class="p">[</span><span class="mf">1</span><span class="p">]</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="kc">null</span><span class="p">;</span><span class="w"> </span><span class="c1">// Retorna la extensión o null si no coincide</span>
+<span class="p">}</span>
+</code></pre></div>
+<p>Actualizar la funcion de subir fichero y subir la foto al servidor</p>
+<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">saveMarker</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">name</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#nom&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span><span class="w"> </span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">desc</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#descrip&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span><span class="w"> </span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">lat</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#text-latitud&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span><span class="w"> </span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">lng</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#text-longitud&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">();</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">imge</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">getBase64Image</span><span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;fimg&#39;</span><span class="p">));</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">ext</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">obtenerExtensionBase64</span><span class="p">(</span><span class="nx">imge</span><span class="p">);</span>
+<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">fotoName</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">generarNombreArchivo</span><span class="p">();</span>
+<span class="w">  </span><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
+<span class="w">      </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">serverURL</span><span class="si">}</span><span class="sb">/incidencia.php`</span><span class="p">,</span>
+<span class="w">      </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">          </span><span class="nx">x</span><span class="o">:</span><span class="w"> </span><span class="nx">lng</span><span class="p">,</span><span class="w"> </span>
+<span class="w">          </span><span class="nx">y</span><span class="o">:</span><span class="w"> </span><span class="nx">lat</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">descripcio</span><span class="o">:</span><span class="w"> </span><span class="nx">desc</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">nombre</span><span class="o">:</span><span class="w"> </span><span class="nx">name</span><span class="p">,</span>
+<span class="w">          </span><span class="nx">foto</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">fotoName</span><span class="si">}</span><span class="sb">.</span><span class="si">${</span><span class="nx">ext</span><span class="si">}</span><span class="sb">`</span>
+<span class="w">      </span><span class="p">},</span>
+<span class="w">      </span><span class="nx">success</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(){</span>
+<span class="w">        </span><span class="nx">subirFoto</span><span class="p">(</span><span class="nx">imge</span><span class="p">,</span><span class="w"> </span><span class="nx">fotoName</span><span class="p">)</span>
+<span class="w">      </span><span class="p">}</span>
 <span class="w">  </span><span class="p">});</span>
 <span class="p">}</span>
 
-<span class="kd">function</span><span class="w"> </span><span class="nx">subirFichero</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">files</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">$</span><span class="p">(</span><span class="s2">&quot;#file&quot;</span><span class="p">)[</span><span class="mf">0</span><span class="p">].</span><span class="nx">files</span><span class="p">;</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">subirFoto</span><span class="p">(</span><span class="nx">foto</span><span class="p">,</span><span class="w"> </span><span class="nx">name</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">  </span><span class="kd">const</span><span class="w"> </span><span class="nx">fd</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">FormData</span><span class="p">();</span>
-<span class="w">  </span><span class="nx">fd</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;file&#39;</span><span class="p">,</span><span class="nx">files</span><span class="p">[</span><span class="mf">0</span><span class="p">]);</span>
+<span class="w">  </span><span class="nx">fd</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;foto&#39;</span><span class="p">,</span><span class="nx">foto</span><span class="p">);</span>
+<span class="w">  </span><span class="nx">fd</span><span class="p">.</span><span class="nx">append</span><span class="p">(</span><span class="s1">&#39;name&#39;</span><span class="p">,</span><span class="nx">name</span><span class="p">);</span>
 <span class="w">  </span><span class="nx">$</span><span class="p">.</span><span class="nx">ajax</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">type</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;POST&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">serverURL</span><span class="si">}</span><span class="sb">upload.php`</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">url</span><span class="o">:</span><span class="w"> </span><span class="sb">`</span><span class="si">${</span><span class="nx">serverURL</span><span class="si">}</span><span class="sb">/upload-photo.php`</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">data</span><span class="o">:</span><span class="w"> </span><span class="nx">fd</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">contentType</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">mimeType</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;multipart/form-data&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">processData</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">success</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(){</span>
-<span class="w">        </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;file uploaded&#39;</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">&#39;file uploaded&#39;</span><span class="p">);</span>
+<span class="w">      </span><span class="nx">location</span><span class="p">.</span><span class="nx">href</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;list.html&quot;</span><span class="p">;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">});</span>
-<span class="p">}</span>
-
-<span class="kd">function</span><span class="w"> </span><span class="nx">getCameraPicture</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">//TOOD tomar foto camara</span>
-<span class="w">  </span><span class="nx">subirFichero</span><span class="p">();</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Crear el archivo <strong>form.css</strong> en la carpeta <em>css</em></p>
-<div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">fimg</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
-<span class="p">}</span>
-</code></pre></div>
-<p>Agregar el archivo form.css al archivo form.html</p>
-<div class="highlight"><pre><span></span><code> <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/form.css&quot;</span><span class="p">/&gt;</span>
-</code></pre></div>
-<p>Agregar el campo file para subir la foto
-<div class="highlight"><pre><span></span><code> <span class="p">&lt;</span><span class="nt">input</span> <span class="na">type</span><span class="o">=</span><span class="s">&#39;file&#39;</span> <span class="na">id</span><span class="o">=</span><span class="s">&#39;file&#39;</span> <span class="na">accept</span><span class="o">=</span><span class="s">&quot;image/*&quot;</span> <span class="na">onchange</span><span class="o">=</span><span class="s">&quot;loadFoto(event);&quot;</span> <span class="p">/&gt;</span>
-</code></pre></div></p>
-<p>Simular coger la posicion del usuario</p>
-<div class="highlight"><pre><span></span><code><span class="kd">function</span><span class="w"> </span><span class="nx">getCurrentPosition</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-<span class="w">  </span><span class="c1">//TODO tomar la posicion del GPS</span>
-<span class="w">  </span><span class="kd">var</span><span class="w"> </span><span class="nx">onSuccess</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">position</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#text-latitud&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">latitude</span><span class="p">);</span>
-<span class="w">        </span><span class="nx">$</span><span class="p">(</span><span class="s1">&#39;#text-longitud&#39;</span><span class="p">).</span><span class="nx">val</span><span class="p">(</span><span class="nx">position</span><span class="p">.</span><span class="nx">coords</span><span class="p">.</span><span class="nx">longitude</span><span class="p">);</span>
-<span class="w">    </span><span class="p">};</span>
-
-<span class="w">    </span><span class="kd">function</span><span class="w"> </span><span class="nx">onError</span><span class="p">(</span><span class="nx">error</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">alert</span><span class="p">(</span><span class="s1">&#39;code: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">error</span><span class="p">.</span><span class="nx">code</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;message: &#39;</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="nx">error</span><span class="p">.</span><span class="nx">message</span><span class="w"> </span><span class="o">+</span><span class="w"> </span><span class="s1">&#39;\n&#39;</span><span class="p">);</span>
-<span class="w">    </span><span class="p">}</span>
-
-<span class="w">    </span><span class="nx">navigator</span><span class="p">.</span><span class="nx">geolocation</span><span class="p">.</span><span class="nx">getCurrentPosition</span><span class="p">(</span><span class="nx">onSuccess</span><span class="p">,</span><span class="w"> </span><span class="nx">onError</span><span class="p">);</span>
 <span class="p">}</span>
 </code></pre></div>
 
