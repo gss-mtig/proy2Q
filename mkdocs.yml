@@ -35,6 +35,7 @@ nav:
 - Mapa incidencias: mapa_incidencias.md
 - Formulario incidencias: form_incidencias.md
 - Ajustes: ajustes_varios.md
+- Capa arboles: arboles.md 
 
 plugins:
     - search
