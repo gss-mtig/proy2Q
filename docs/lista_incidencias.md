@@ -2,15 +2,13 @@
 
 Agregar el contenedor principal
 
-``` html
-<div id="main" class="ui-content">
-    
-</div>
+```html
+<div id="main" class="ui-content"></div>
 ```
 
 Agregar la tabla al contenedor
 
-``` html
+```html
 <table data-role="table" id="incList" class="ui-responsive table-stroke">
     <thead>
         <tr>
@@ -19,46 +17,43 @@ Agregar la tabla al contenedor
             <th>Descripcion</th>
         </tr>
     </thead>
-    <tbody id="incListBody">
-
-    </tbody>
+    <tbody id="incListBody"></tbody>
 </table>
 ```
 
-Crear el archivo **list.js** en la carpeta *js*.
+Crear el archivo **list.js** en la carpeta _js_.
 
-``` js
-$(document).ready(function() {
+```js
+$(document).ready(function () {
+    const serverURL = "https://wladimir-uab.alwaysdata.net/";
 
-    const serverURL = "https://web-uab.000webhostapp.com/";
-
-    function getIncidencias(){
-        const list_items= [];
+    function getIncidencias() {
+        const list_items = [];
         $.ajax({
-            type: 'POST',
-            url: `${serverURL}llista.php`,
+            type: "POST",
+            url: `${serverURL}lista.php`,
             success: function (data) {
-                for (i=0; i<data.length; i++){
+                for (i = 0; i < data.length; i++) {
                     var item = `<tr>
                     <td><img width="200px" src="${serverURL}/images/${data[i].foto}"/></td>
                     <td>${data[i].nombre}</td>
                     <td>${data[i].descripcio}</td>
-                    </tr>`
+                    </tr>`;
                     list_items.push(item);
                 }
-                list = list_items.join(' ');
-                $('#incListBody').append(list);
-                $('#incList').table("rebuild");
-        }})
+                list = list_items.join(" ");
+                $("#incListBody").append(list);
+                $("#incList").table("rebuild");
+            },
+        });
     }
 
     getIncidencias();
-
 });
 ```
 
 Agregar el archivo list.js al archivo list.html
 
-``` html
- <script src="js/list.js"></script>
+```html
+<script src="js/list.js"></script>
 ```

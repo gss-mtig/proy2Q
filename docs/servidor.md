@@ -1,42 +1,28 @@
 # Servidor
 
-## Hosting 
+## Hosting
 
-Crear la cuenta de hosting gratis en https://www.hostinger.es/hosting-gratuito o en su defecto https://www.awardspace.com/free-hosting/
+Crear la cuenta de hosting gratis en https://www.alwaysdata.com/en/offers/
 
-Verificar el correo
-
-Let's create some magic
-
-Other
-
-nombre del proyecto: proy2Quab[NOMBRE]
+nombre del dominio: [NOMBRE]. Ej. `wladimir-uab`
 
 Copiar el password en algun lugar seguro: [CLAVE_SITIO]
 
-Upload your site
-
 ## Crear la base de datos
 
-Ir a la lista de tus sitios https://www.000webhost.com/members/website/list
+Ir a la lista de tus sitios https://admin.alwaysdata.com/database/?type=mysql
 
-Manage website (boton aparece al poner el cursor sobre el sitio)
+Database name: [NOMBRE]\_incidentes. Ej. `wladimir-uab_incidentes`
 
-Tools > Database Manager
+Database username: [NOMBRE]. Ej. `wladimir-uab`
 
-New Database
+Database password: [CLAVE_SITIO]
 
-Database name: incidentes
-
-Database username: [USUARIODB]
-
-Database password: [CLAVE_DB]
-
-Una vez finalizada la creación -> Manage -> PhpMyAdmin 
+Una vez finalizada la creación -> PhpMyAdmin
 
 Crear una tabla llamada **incidencias**
 
-``` sql
+```sql
 CREATE TABLE `incidencias` (
  `id_incidencias` bigint(20) unsigned NOT NULL AUTO_INCREMENT,
  `inc_date` timestamp NULL DEFAULT current_timestamp(),
@@ -44,23 +30,25 @@ CREATE TABLE `incidencias` (
  `y` double DEFAULT NULL,
  `descripcio` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
  `nombre` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
- `foto` varchar(100) COLLATE utf8_unicode_ci DEFAULT NULL,
+ `foto` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
  PRIMARY KEY (`id_incidencias`),
  UNIQUE KEY `id_incidencias` (`id_incidencias`)
 ) ENGINE=InnoDB AUTO_INCREMENT=25 DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci
-``` 
+```
 
 ## Archivos del servidor
 
-Tools > File Manager -> Upload Files
+Instalar cliente FTP [FileZilla](https://filezilla-project.org/download.php)
 
-Dentro de la carpeta **public_html** crear una carpeta llamada **images**
+Crear una nueva conexion
+
+Dentro de la carpeta **www** crear una carpeta llamada **images**
 
 Crear los archivos del servidor
 
-Crear un archivo llamado **llista.php** con el siguiente contenido
+Crear un archivo llamado **lista.php** con el siguiente contenido
 
-``` php
+```php
 <?php
 header("Access-Control-Allow-Origin: *");
 header('Content-type: application/json; charset=utf-8');
@@ -84,7 +72,7 @@ $mysqli->close();
 
 Crear un archivo llamado **incidencia.php** con el siguiente contenido
 
-``` php
+```php
 <?php
 header("Access-Control-Allow-Origin: *");
 $x = $_POST['x'];
@@ -108,11 +96,11 @@ $mysqli->close();
 
 Crear un archivo llamado **upload.php** con el siguiente contenido
 
-``` php
+```php
 <?php
  header("Access-Control-Allow-Origin: *");
  // Directory where uploaded images are saved
- $dirname = "images/"; 
+ $dirname = "images/";
  // If uploading file
  if ($_FILES) {
     move_uploaded_file($_FILES["file"]["tmp_name"],$dirname."/".$_FILES["file"]["name"]);
@@ -122,15 +110,15 @@ Crear un archivo llamado **upload.php** con el siguiente contenido
 
 Crear un archivo llamado **index.php** con el siguiente contenido
 
-``` php
+```php
 <html>
  <head>
   <title>Prueba de PHP</title>
  </head>
  <body>
- <?php 
- echo '<p>Hola Mundo</p>'; 
- 
+ <?php
+ echo '<p>Hola Mundo</p>';
+
  echo 'Versión actual de PHP: ' . phpversion();
  ?>
  </body>
@@ -138,9 +126,10 @@ Crear un archivo llamado **index.php** con el siguiente contenido
 ```
 
 !!! note "Opcional"
+
     Crear un archivo llamado **photo.php** con el siguiente contenido
 
-    ``` php
+    ```php
     <?php
       header("Access-Control-Allow-Origin: *");
       $x = $_GET['foto'];
@@ -167,7 +156,7 @@ Crear un archivo llamado **index.php** con el siguiente contenido
     ?>
     ```
 
-Subir los archivos php a la carpeta **public_html**
+Subir los archivos php a la carpeta **www**
 
-Abrir en el navegador la url de vuestra aplicación por ejemplo https://proy2qmgeouab.000webhostapp.com
-
+Abrir en el navegador la url de vuestra aplicación por ejemplo
+https://wladimir-uab.alwaysdata.net/
