@@ -809,141 +809,165 @@
 
 <h1 id="controles-y-capas-mapa">Controles y capas mapa</h1>
 <p>Agregar el document ready</p>
-<div class="highlight"><pre><span></span><code><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">ready</span><span class="p">(</span><span class="kd">function</span><span class="p">()</span><span class="w"> </span><span class="p">{</span>
-
-
-
-<span class="p">});</span>
+<div class="highlight"><pre><span></span><code><span class="nx">$</span><span class="p">(</span><span class="nb">document</span><span class="p">).</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;pageshow&quot;</span><span class="p">,</span><span class="w"> </span><span class="s2">&quot;#mapPage&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">()</span><span class="w"> </span><span class="p">{});</span>
 </code></pre></div>
 <p>Agregar el control de capas</p>
-<div class="highlight"><pre><span></span><code> <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/styledLayerControl.css&quot;</span><span class="p">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/styledLayerControl.css&quot;</span> <span class="p">/&gt;</span>
 
- <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/styledLayerControl.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/styledLayerControl.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
-<p>Servicios WMTS ICGC <a href="https://www.icgc.cat/es/Administracion-y-empresa/Servicios/Servicios-en-linea-Geoservicios/WMS-y-teselas-Cartografia-de-referencia/WMS-WMTS-rapidos-de-cartografia-raster/WMTS-de-cartografia-raster-en-coordenadas-no-UTM">https://www.icgc.cat/es/Administracion-y-empresa/Servicios/Servicios-en-linea-Geoservicios/WMS-y-teselas-Cartografia-de-referencia/WMS-WMTS-rapidos-de-cartografia-raster/WMTS-de-cartografia-raster-en-coordenadas-no-UTM</a></p>
+<p>Servicios WMTS ICGC
+<a href="https://www.icgc.cat/es/Administracion-y-empresa/Servicios/Servicios-en-linea-Geoservicios/WMS-y-teselas-Cartografia-de-referencia/WMS-WMTS-rapidos-de-cartografia-raster/WMTS-de-cartografia-raster-en-coordenadas-no-UTM">https://www.icgc.cat/es/Administracion-y-empresa/Servicios/Servicios-en-linea-Geoservicios/WMS-y-teselas-Cartografia-de-referencia/WMS-WMTS-rapidos-de-cartografia-raster/WMTS-de-cartografia-raster-en-coordenadas-no-UTM</a></p>
 <p><a href="http://kartena.github.io/Proj4Leaflet/">http://kartena.github.io/Proj4Leaflet/</a></p>
 <div class="highlight"><pre><span></span><code><span class="c1">//Capas</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">serveiOrtoCache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s2">&quot;https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/{z}/{x}/{y}.jpeg&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">serveiOrtoCache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span>
+<span class="w">    </span><span class="s2">&quot;https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/orto/GRID3857/{z}/{x}/{y}.jpeg&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">{},</span>
+<span class="p">);</span>
 
-<span class="kd">const</span><span class="w"> </span><span class="nx">serveiTopoCache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span><span class="s2">&quot;https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/topo/GRID3857/{z}/{x}/{y}.jpeg&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">{});</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">serveiTopoCache</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">tileLayer</span><span class="p">(</span>
+<span class="w">    </span><span class="s2">&quot;https://geoserveis.icgc.cat/icc_mapesmultibase/noutm/wmts/topo/GRID3857/{z}/{x}/{y}.jpeg&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">{},</span>
+<span class="p">);</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">portals</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">Proj</span><span class="p">.</span><span class="nx">geoJson</span><span class="p">(</span><span class="nx">portals_json</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="nx">pointToLayer</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">geoJsonPoint</span><span class="p">,</span><span class="w"> </span><span class="nx">latlng</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nx">pointToLayer</span><span class="o">:</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">geoJsonPoint</span><span class="p">,</span><span class="w"> </span><span class="nx">latlng</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
 <span class="w">        </span><span class="k">return</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">circleMarker</span><span class="p">(</span><span class="nx">latlng</span><span class="p">,</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">radius</span><span class="o">:</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">fillColor</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#ff7800&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#000&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">weight</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">opacity</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">fillOpacity</span><span class="o">:</span><span class="w"> </span><span class="mf">0.8</span>
-<span class="w">    </span><span class="p">});</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">            </span><span class="nx">radius</span><span class="o">:</span><span class="w"> </span><span class="mf">8</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">fillColor</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#ff7800&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">color</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;#000&quot;</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">weight</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">opacity</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">fillOpacity</span><span class="o">:</span><span class="w"> </span><span class="mf">0.8</span><span class="p">,</span>
+<span class="w">        </span><span class="p">});</span>
+<span class="w">    </span><span class="p">},</span>
 <span class="p">});</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">baseMaps</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">groupName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Mapes base&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">layers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;OpenStreetMap&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">osm</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Ortofoto&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">serveiOrtoCache</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Topogràfic&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">serveiTopoCache</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">            </span><span class="nx">OpenStreetMap</span><span class="o">:</span><span class="w"> </span><span class="nx">osm</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Ortofoto</span><span class="o">:</span><span class="w"> </span><span class="nx">serveiOrtoCache</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Topogràfic</span><span class="o">:</span><span class="w"> </span><span class="nx">serveiTopoCache</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">},</span>
 <span class="p">];</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">serveis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">        </span><span class="nx">groupName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Portals&quot;</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">layers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;Portals&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">portals</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span>
+<span class="w">            </span><span class="nx">Portals</span><span class="o">:</span><span class="w"> </span><span class="nx">portals</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">},</span>
 <span class="p">];</span>
 
 <span class="kd">const</span><span class="w"> </span><span class="nx">options</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">{</span>
 <span class="w">    </span><span class="nx">container_width</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;200px&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">container_maxHeight</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;850px&quot;</span><span class="p">,</span><span class="w"> </span>
+<span class="w">    </span><span class="nx">container_maxHeight</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;850px&quot;</span><span class="p">,</span>
 <span class="w">    </span><span class="nx">group_maxHeight</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;80px&quot;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">exclusive</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span>
+<span class="w">    </span><span class="nx">exclusive</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="p">};</span>
-<span class="kd">const</span><span class="w"> </span><span class="nx">controlLayers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">Control</span><span class="p">.</span><span class="nx">styledLayerControl</span><span class="p">(</span><span class="nx">baseMaps</span><span class="p">,</span><span class="w"> </span><span class="nx">serveis</span><span class="p">,</span><span class="w"> </span><span class="nx">options</span><span class="p">);</span>
+<span class="kd">const</span><span class="w"> </span><span class="nx">controlLayers</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">Control</span><span class="p">.</span><span class="nx">styledLayerControl</span><span class="p">(</span>
+<span class="w">    </span><span class="nx">baseMaps</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">serveis</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">options</span><span class="p">,</span>
+<span class="p">);</span>
 <span class="nx">mapa</span><span class="p">.</span><span class="nx">addControl</span><span class="p">(</span><span class="nx">controlLayers</span><span class="p">);</span>
 </code></pre></div>
 <p>Agregar el control de busqueda</p>
-<div class="highlight"><pre><span></span><code>    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/leaflet-search.min.css&quot;</span><span class="p">/&gt;</span>
-    <span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/leaflet-search.mobile.min.css&quot;</span><span class="p">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/leaflet-search.min.css&quot;</span> <span class="p">/&gt;</span>
+<span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/leaflet-search.mobile.min.css&quot;</span> <span class="p">/&gt;</span>
 
-    <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/leaflet-search.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/leaflet-search.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">searchControl</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">L</span><span class="p">.</span><span class="nx">Control</span><span class="p">.</span><span class="nx">Search</span><span class="p">({</span>
 <span class="w">    </span><span class="nx">layer</span><span class="o">:</span><span class="w"> </span><span class="nx">portals</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">propertyName</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;Direccion&#39;</span><span class="p">,</span>
-<span class="w">    </span><span class="nx">zoom</span><span class="o">:</span><span class="w"> </span><span class="mf">18</span>
-<span class="w">  </span><span class="p">});</span>
-<span class="w">  </span><span class="nx">searchControl</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s1">&#39;search:locationfound&#39;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="nx">latlng</span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">item</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">propertyName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Direccion&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="nx">zoom</span><span class="o">:</span><span class="w"> </span><span class="mf">18</span><span class="p">,</span>
+<span class="p">});</span>
+<span class="nx">searchControl</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;search:locationfound&quot;</span><span class="p">,</span><span class="w"> </span><span class="p">(</span><span class="nx">item</span><span class="p">)</span><span class="w"> </span><span class="p">=&gt;</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">const</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">latlng</span><span class="w"> </span><span class="p">}</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">item</span><span class="p">;</span>
 <span class="w">    </span><span class="c1">//streetView(latlng.lat, latlng.lng);</span>
-<span class="w">  </span><span class="p">})</span>
-<span class="w">  </span><span class="nx">mapa</span><span class="p">.</span><span class="nx">addControl</span><span class="p">(</span><span class="w"> </span><span class="nx">searchControl</span><span class="w"> </span><span class="p">);</span>
+<span class="p">});</span>
+<span class="nx">mapa</span><span class="p">.</span><span class="nx">addControl</span><span class="p">(</span><span class="nx">searchControl</span><span class="p">);</span>
 </code></pre></div>
 <p>Agregar el font-awesome</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&quot;</span><span class="p">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span>
+    <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span>
+    <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css&quot;</span>
+<span class="p">/&gt;</span>
 </code></pre></div>
 <p>Agregar el control de localizacion</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/L.Control.Locate.min.css&quot;</span><span class="p">/&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;css/L.Control.Locate.min.css&quot;</span> <span class="p">/&gt;</span>
 
 <span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;js/L.Control.Locate.min.js&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1">//leaflet control geolocalizacion</span>
-<span class="nx">L</span><span class="p">.</span><span class="nx">control</span><span class="p">.</span><span class="nx">locate</span><span class="p">({</span><span class="nx">drawCircle</span><span class="o">:</span><span class="kc">false</span><span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">mapa</span><span class="p">);</span>
+<span class="nx">L</span><span class="p">.</span><span class="nx">control</span><span class="p">.</span><span class="nx">locate</span><span class="p">({</span><span class="w"> </span><span class="nx">drawCircle</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="w"> </span><span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">mapa</span><span class="p">);</span>
 </code></pre></div>
 <p>Agregar el control de medida</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span> <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span> <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/gh/gokertanrisever/leaflet-ruler@master/src/leaflet-ruler.css&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;</span>  
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">link</span>
+    <span class="na">rel</span><span class="o">=</span><span class="s">&quot;stylesheet&quot;</span>
+    <span class="na">href</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/gh/gokertanrisever/leaflet-ruler@master/src/leaflet-ruler.css&quot;</span>
+    <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span>
+<span class="p">/&gt;</span>
 
-<span class="p">&lt;</span><span class="nt">script</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/gh/gokertanrisever/leaflet-ruler@master/src/leaflet-ruler.js&quot;</span> <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">script</span>
+    <span class="na">src</span><span class="o">=</span><span class="s">&quot;https://cdn.jsdelivr.net/gh/gokertanrisever/leaflet-ruler@master/src/leaflet-ruler.js&quot;</span>
+    <span class="na">crossorigin</span><span class="o">=</span><span class="s">&quot;anonymous&quot;</span>
+<span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1">//Medida</span>
-<span class="nx">L</span><span class="p">.</span><span class="nx">control</span><span class="p">.</span><span class="nx">ruler</span><span class="p">({</span>
-<span class="w">    </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="s1">&#39;topleft&#39;</span>
-<span class="p">}).</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">mapa</span><span class="p">);</span>
+<span class="nx">L</span><span class="p">.</span><span class="nx">control</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">ruler</span><span class="p">({</span>
+<span class="w">        </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;topleft&quot;</span><span class="p">,</span>
+<span class="w">    </span><span class="p">})</span>
+<span class="w">    </span><span class="p">.</span><span class="nx">addTo</span><span class="p">(</span><span class="nx">mapa</span><span class="p">);</span>
 </code></pre></div>
 <p>Agregar la vista de calle (<strong>REQUIERE API KEY DE GOOGLE</strong>)</p>
-<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span> <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://maps.googleapis.com/maps/api/js?key=[TU_API_KEY]&quot;</span><span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
+<div class="highlight"><pre><span></span><code><span class="p">&lt;</span><span class="nt">script</span>
+    <span class="na">type</span><span class="o">=</span><span class="s">&quot;text/javascript&quot;</span>
+    <span class="na">src</span><span class="o">=</span><span class="s">&quot;http://maps.googleapis.com/maps/api/js?key=[TU_API_KEY]&quot;</span>
+<span class="p">&gt;&lt;/</span><span class="nt">script</span><span class="p">&gt;</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="p">#</span><span class="nn">panorama</span><span class="w"> </span><span class="p">{</span>
-<span class="w">    </span><span class="k">position</span><span class="p">:</span><span class="kc">absolute</span><span class="p">;</span>
-<span class="w">    </span><span class="k">z-index</span><span class="p">:</span><span class="mi">1000</span><span class="p">;</span><span class="w">   </span>
+<span class="w">    </span><span class="k">position</span><span class="p">:</span><span class="w"> </span><span class="kc">absolute</span><span class="p">;</span>
+<span class="w">    </span><span class="k">z-index</span><span class="p">:</span><span class="w"> </span><span class="mi">1000</span><span class="p">;</span>
 <span class="w">    </span><span class="k">left</span><span class="p">:</span><span class="w"> </span><span class="mi">10</span><span class="kt">px</span><span class="p">;</span>
 <span class="w">    </span><span class="k">bottom</span><span class="p">:</span><span class="w"> </span><span class="mi">100</span><span class="kt">px</span><span class="p">;</span>
-<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="mi">150</span><span class="kt">px</span><span class="p">;</span>
-<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">height</span><span class="p">:</span><span class="w"> </span><span class="mi">150</span><span class="kt">px</span><span class="p">;</span>
+<span class="w">    </span><span class="k">width</span><span class="p">:</span><span class="w"> </span><span class="mi">200</span><span class="kt">px</span><span class="p">;</span>
 <span class="w">    </span><span class="k">resize</span><span class="p">:</span><span class="w"> </span><span class="kc">both</span><span class="p">;</span>
-<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="kc">transparent</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
+<span class="w">    </span><span class="k">background-color</span><span class="p">:</span><span class="w"> </span><span class="kc">transparent</span><span class="w"> </span><span class="cp">!important</span><span class="p">;</span>
 <span class="p">}</span>
 </code></pre></div>
 <div class="highlight"><pre><span></span><code><span class="c1">// en el search control descomentar</span>
 <span class="c1">//streetView(latlng.lat, latlng.lng)</span>
 
 <span class="c1">//leaflet Street View</span>
-<span class="kd">function</span><span class="w"> </span><span class="nx">streetView</span><span class="p">(</span><span class="nx">lat</span><span class="p">,</span><span class="nx">lng</span><span class="p">){</span>
-<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;panorama&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">visibility</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s1">&#39;visible&#39;</span><span class="p">;</span>
+<span class="kd">function</span><span class="w"> </span><span class="nx">streetView</span><span class="p">(</span><span class="nx">lat</span><span class="p">,</span><span class="w"> </span><span class="nx">lng</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;panorama&quot;</span><span class="p">).</span><span class="nx">style</span><span class="p">.</span><span class="nx">visibility</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="s2">&quot;visible&quot;</span><span class="p">;</span>
 <span class="w">    </span><span class="nx">panorama</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="ow">new</span><span class="w"> </span><span class="nx">google</span><span class="p">.</span><span class="nx">maps</span><span class="p">.</span><span class="nx">StreetViewPanorama</span><span class="p">(</span>
-<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s1">&#39;panorama&#39;</span><span class="p">),</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">lat</span><span class="o">:</span><span class="w"> </span><span class="nx">lat</span><span class="w"> </span><span class="p">,</span><span class="w"> </span><span class="nx">lng</span><span class="o">:</span><span class="w"> </span><span class="nx">lng</span><span class="p">},</span>
-<span class="w">        </span><span class="nx">pov</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="nx">heading</span><span class="o">:</span><span class="w"> </span><span class="mf">290</span><span class="p">,</span><span class="w"> </span><span class="nx">pitch</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="p">},</span>
-<span class="w">        </span><span class="nx">zoom</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span>
-<span class="w">    </span><span class="p">});</span>
+<span class="w">        </span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementById</span><span class="p">(</span><span class="s2">&quot;panorama&quot;</span><span class="p">),</span>
+<span class="w">        </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">position</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">lat</span><span class="o">:</span><span class="w"> </span><span class="nx">lat</span><span class="p">,</span><span class="w"> </span><span class="nx">lng</span><span class="o">:</span><span class="w"> </span><span class="nx">lng</span><span class="w"> </span><span class="p">},</span>
+<span class="w">            </span><span class="nx">pov</span><span class="o">:</span><span class="w"> </span><span class="p">{</span><span class="w"> </span><span class="nx">heading</span><span class="o">:</span><span class="w"> </span><span class="mf">290</span><span class="p">,</span><span class="w"> </span><span class="nx">pitch</span><span class="o">:</span><span class="w"> </span><span class="mf">10</span><span class="w"> </span><span class="p">},</span>
+<span class="w">            </span><span class="nx">zoom</span><span class="o">:</span><span class="w"> </span><span class="mf">1</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">);</span>
 <span class="w">    </span><span class="nx">panorama</span><span class="p">.</span><span class="nx">setOptions</span><span class="p">({</span>
 <span class="w">        </span><span class="nx">addressControl</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
 <span class="w">        </span><span class="nx">panControl</span><span class="o">:</span><span class="w"> </span><span class="kc">false</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">enableCloseButton</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span>
+<span class="w">        </span><span class="nx">enableCloseButton</span><span class="o">:</span><span class="w"> </span><span class="kc">true</span><span class="p">,</span>
 <span class="w">    </span><span class="p">});</span>
 <span class="p">}</span>
 
-<span class="nx">mapa</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;contextmenu&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="p">(</span><span class="nx">evento</span><span class="p">){</span>
-<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">coordenada</span><span class="o">=</span><span class="w"> </span><span class="nx">evento</span><span class="p">.</span><span class="nx">latlng</span><span class="p">;</span>
-<span class="w">    </span><span class="nx">streetView</span><span class="p">(</span><span class="nx">coordenada</span><span class="p">.</span><span class="nx">lat</span><span class="p">,</span><span class="w"> </span><span class="nx">coordenada</span><span class="p">.</span><span class="nx">lng</span><span class="p">)</span>
+<span class="nx">mapa</span><span class="p">.</span><span class="nx">on</span><span class="p">(</span><span class="s2">&quot;contextmenu&quot;</span><span class="p">,</span><span class="w"> </span><span class="kd">function</span><span class="w"> </span><span class="p">(</span><span class="nx">evento</span><span class="p">)</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="kd">var</span><span class="w"> </span><span class="nx">coordenada</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="nx">evento</span><span class="p">.</span><span class="nx">latlng</span><span class="p">;</span>
+<span class="w">    </span><span class="nx">streetView</span><span class="p">(</span><span class="nx">coordenada</span><span class="p">.</span><span class="nx">lat</span><span class="p">,</span><span class="w"> </span><span class="nx">coordenada</span><span class="p">.</span><span class="nx">lng</span><span class="p">);</span>
 <span class="p">});</span>
 </code></pre></div>
 <p>Agregar el resto de capas geojson al mapa</p>
@@ -988,68 +1012,74 @@
 </code></pre></div>
 <p>Modificar el control del capas</p>
 <div class="highlight"><pre><span></span><code><span class="kd">const</span><span class="w"> </span><span class="nx">serveis</span><span class="w"> </span><span class="o">=</span><span class="w"> </span><span class="p">[</span>
-<span class="w">    </span><span class="p">{</span><span class="w"> </span>
-<span class="w">        </span><span class="nx">groupName</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Entitats bancàries&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">layers</span><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;BBVA&quot;</span><span class="w"> </span><span class="o">:</span><span class="w">  </span><span class="nx">BBVA</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;CaixaBank&quot;</span><span class="w">  </span><span class="o">:</span><span class="w">  </span><span class="nx">caixabanc</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Santander&quot;</span><span class="w">   </span><span class="o">:</span><span class="w">  </span><span class="nx">santander</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Sabadell&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">sabadell</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">groupName</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Sanitat&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">layers</span><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;Hospital&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">hospital</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;CAP&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">CAP</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Farmacies&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">farmacies</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">groupName</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Educació&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">layers</span><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;Escoles&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">escoles</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Biblioteques&quot;</span><span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="nx">biblio</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">groupName</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Oci i lleure&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">layers</span><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;Parcs&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">parcs</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Poliesportius&quot;</span><span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="nx">poliesport</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Oci&quot;</span><span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="nx">oci</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Restaurants&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">restaurant</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">groupName</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Consum&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">layers</span><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">groupName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Entitats bancàries&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">layers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">BBVA</span><span class="o">:</span><span class="w"> </span><span class="nx">BBVA</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">CaixaBank</span><span class="o">:</span><span class="w"> </span><span class="nx">caixabanc</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Santander</span><span class="o">:</span><span class="w"> </span><span class="nx">santander</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Sabadell</span><span class="o">:</span><span class="w"> </span><span class="nx">sabadell</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">groupName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Sanitat&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">layers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">Hospital</span><span class="o">:</span><span class="w"> </span><span class="nx">hospital</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">CAP</span><span class="o">:</span><span class="w"> </span><span class="nx">CAP</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Farmacies</span><span class="o">:</span><span class="w"> </span><span class="nx">farmacies</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">groupName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Educació&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">layers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">Escoles</span><span class="o">:</span><span class="w"> </span><span class="nx">escoles</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Biblioteques</span><span class="o">:</span><span class="w"> </span><span class="nx">biblio</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">groupName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Oci i lleure&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">layers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">Parcs</span><span class="o">:</span><span class="w"> </span><span class="nx">parcs</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Poliesportius</span><span class="o">:</span><span class="w"> </span><span class="nx">poliesport</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Oci</span><span class="o">:</span><span class="w"> </span><span class="nx">oci</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Restaurants</span><span class="o">:</span><span class="w"> </span><span class="nx">restaurant</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">groupName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Consum&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">layers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="c1">//&quot;Supermercats&quot; : supermercats,</span>
-<span class="w">            </span><span class="s2">&quot;Alcampo&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">alcampo</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;BonArea&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">bonarea</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Condis&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">condis</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Caprabo&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">caprabo</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Consum&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">consum</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Dia&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">dia</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Mercadona&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">mercadona</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">groupName</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Serveis&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">layers</span><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">Alcampo</span><span class="o">:</span><span class="w"> </span><span class="nx">alcampo</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">BonArea</span><span class="o">:</span><span class="w"> </span><span class="nx">bonarea</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Condis</span><span class="o">:</span><span class="w"> </span><span class="nx">condis</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Caprabo</span><span class="o">:</span><span class="w"> </span><span class="nx">caprabo</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Consum</span><span class="o">:</span><span class="w"> </span><span class="nx">consum</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Dia</span><span class="o">:</span><span class="w"> </span><span class="nx">dia</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Mercadona</span><span class="o">:</span><span class="w"> </span><span class="nx">mercadona</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">groupName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Serveis&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">layers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
 <span class="w">            </span><span class="c1">//&quot;Serveis Públics&quot; : serveispublics,</span>
-<span class="w">            </span><span class="s2">&quot;Ajuntament&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">ajuntament</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;DNI&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">DNI</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Museu&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">museu</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Policia&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">policia</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Serveis socials&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">serveissocials</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Tanatori&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">tanatori</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Parades bus&quot;</span><span class="w">      </span><span class="o">:</span><span class="w"> </span><span class="nx">paradesbus</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Aparcament&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">aparcament</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Gasolineres&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">gasolineres</span><span class="p">,</span>
-<span class="w">            </span><span class="s2">&quot;Ferrocarrils&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">ferrocarrils</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">},</span><span class="w"> </span><span class="p">{</span>
-<span class="w">        </span><span class="nx">groupName</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Portals&quot;</span><span class="p">,</span>
-<span class="w">        </span><span class="nx">layers</span><span class="w">    </span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
-<span class="w">            </span><span class="s2">&quot;Portals&quot;</span><span class="w"> </span><span class="o">:</span><span class="w"> </span><span class="nx">portals</span>
-<span class="w">        </span><span class="p">}</span>
-<span class="w">    </span><span class="p">}</span><span class="w">                               </span>
+<span class="w">            </span><span class="nx">Ajuntament</span><span class="o">:</span><span class="w"> </span><span class="nx">ajuntament</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">DNI</span><span class="o">:</span><span class="w"> </span><span class="nx">DNI</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Museu</span><span class="o">:</span><span class="w"> </span><span class="nx">museu</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Policia</span><span class="o">:</span><span class="w"> </span><span class="nx">policia</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;Serveis socials&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">serveissocials</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Tanatori</span><span class="o">:</span><span class="w"> </span><span class="nx">tanatori</span><span class="p">,</span>
+<span class="w">            </span><span class="s2">&quot;Parades bus&quot;</span><span class="o">:</span><span class="w"> </span><span class="nx">paradesbus</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Aparcament</span><span class="o">:</span><span class="w"> </span><span class="nx">aparcament</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Gasolineres</span><span class="o">:</span><span class="w"> </span><span class="nx">gasolineres</span><span class="p">,</span>
+<span class="w">            </span><span class="nx">Ferrocarrils</span><span class="o">:</span><span class="w"> </span><span class="nx">ferrocarrils</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">},</span>
+<span class="w">    </span><span class="p">{</span>
+<span class="w">        </span><span class="nx">groupName</span><span class="o">:</span><span class="w"> </span><span class="s2">&quot;Portals&quot;</span><span class="p">,</span>
+<span class="w">        </span><span class="nx">layers</span><span class="o">:</span><span class="w"> </span><span class="p">{</span>
+<span class="w">            </span><span class="nx">Portals</span><span class="o">:</span><span class="w"> </span><span class="nx">portals</span><span class="p">,</span>
+<span class="w">        </span><span class="p">},</span>
+<span class="w">    </span><span class="p">},</span>
 <span class="p">];</span>
 </code></pre></div>
 
