@@ -4,46 +4,47 @@ site_description: Proyecto 2do Quatrimestre
 site_author: proy2Q
 
 theme:
-  name: "material"
-  language: "es"
-  highlightjs: true
+    name: "material"
+    language: "es"
+    highlightjs: true
 
 repo_url: "https://github.com/gss-mtig/proy2Q"
 
 nav:
-  - Home: index.md
-  - Descripción del proyecto: descripcion.md
-  - Levantamiento de requerimientos: requerimientos.md
-  - Requerimientos App: requerimientos_app.md
-  - Casos de uso: casos_uso.md
-  - Estructura del proyecto: estructura.md
-  - Contacto: contact.md
-  - Acerca de: about.md
-  - Página principal: principal.md
-  - Lista de incidencias: lista.md
-  - Formulario: formulario.md
-  - Menú: menu.md
-  - Mapa: mapa.md
-  - Controles y capas mapa: mapa_capas.md
-  - Lista Incidencias: lista_incidencias.md
-  - Servidor: servidor.md
-  - Mapa incidencias: mapa_incidencias.md
-  - Formulario incidencias: form_incidencias.md
-  - Ajustes: ajustes_varios.md
-  - Capa arboles: arboles.md
+    - Home: index.md
+    - Descripción del proyecto: descripcion.md
+    - Levantamiento de requerimientos: requerimientos.md
+    - Requerimientos App: requerimientos_app.md
+    - Casos de uso: casos_uso.md
+    - Estructura del proyecto: estructura.md
+    - Contacto: contact.md
+    - Acerca de: about.md
+    - Página principal: principal.md
+    - Lista de incidencias: lista.md
+    - Formulario: formulario.md
+    - Menú: menu.md
+    - Mapa: mapa.md
+    - Controles y capas mapa: mapa_capas.md
+    - Lista Incidencias: lista_incidencias.md
+    - Servidor: servidor.md
+    - Mapa incidencias: mapa_incidencias.md
+    - Formulario incidencias: form_incidencias.md
+    - Ajustes: ajustes_varios.md
+    - Capa arboles: arboles.md
+    - Memoria: memoria.md
 
 plugins:
-  - search
-  - mermaid2
+    - search
+    - mermaid2
 
 markdown_extensions:
-  - admonition
-  - footnotes
-  - codehilite:
-      linenums: true
-  - pymdownx.magiclink
-  - pymdownx.superfences:
-      custom_fences:
-        - name: mermaid
-          class: mermaid
-          format: !!python/name:pymdownx.superfences.fence_code_format
+    - admonition
+    - footnotes
+    - codehilite:
+          linenums: true
+    - pymdownx.magiclink
+    - pymdownx.superfences:
+          custom_fences:
+              - name: mermaid
+                class: mermaid
+                format: !!python/name:pymdownx.superfences.fence_code_format
